@@ -2,7 +2,7 @@ name = "backend"
 compatibility_date = "2023-12-01"
 
 [vars]
-MY_VAR = "DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiNzkzNzk4YmMtYzA4My00NzNlLTlmMDctNzk5MWJjNGM4NjBkIiwidGVuYW50X2lkIjoiMTllZDc0OTQ5NDk2ZTBlYjU2YTU4ODYyOTEwNTUxYjE3NzZlOWZlY2I3ZWIxOTIzOWU0YWQ4NDVkMDQ2MjRhMyIsImludGVybmFsX3NlY3JldCI6IjUwY2ExNGQ1LWQ4MTEtNDY2Yi04OTZhLTY5OGZiNjMxNzI1ZiJ9.YptpHK-aTZHKzqaq5DvpwfCe4gzQCILAEc0isTbwxg8""
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiNzkzNzk4YmMtYzA4My00NzNlLTlmMDctNzk5MWJjNGM4NjBkIiwidGVuYW50X2lkIjoiMTllZDc0OTQ5NDk2ZTBlYjU2YTU4ODYyOTEwNTUxYjE3NzZlOWZlY2I3ZWIxOTIzOWU0YWQ4NDVkMDQ2MjRhMyIsImludGVybmFsX3NlY3JldCI6IjUwY2ExNGQ1LWQ4MTEtNDY2Yi04OTZhLTY5OGZiNjMxNzI1ZiJ9.YptpHK-aTZHKzqaq5DvpwfCe4gzQCILAEc0isTbwxg8"
 
 
-JWT_Secret = "this is a very hige secret";
+JWT_Secret = "this is a very hige secret"
