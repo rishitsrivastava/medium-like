@@ -9,6 +9,16 @@ const app = new Hono<{
   }
 }>()
 
+
+app.route('/api/v1/user', userRouter);
+
+app.route('/api/v1/blog', blogRouter)
+
+
+export default app
+
+
+
 // app.use('api/v1/blog/*', async (c, next) => {
 //   const jwt = c.req.header("authorization");
 //   if(!jwt) {
@@ -26,10 +36,3 @@ const app = new Hono<{
 //   c.set('userID' , payload)
 //   await next();
 // })
-
-app.route('/api/v1/user', userRouter);
-
-app.route('/api/v1/blog', blogRouter)
-
-
-export default app
