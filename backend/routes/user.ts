@@ -1,3 +1,4 @@
+import { signupInput } from './../../common/src/index';
 import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import { Hono } from "hono";
@@ -15,9 +16,15 @@ userRouter.post('/signup', async (c) => {
     const prisma = new PrismaClient({
       datasourceUrl: c.env.DATABASE_URL, 
     }).$extends(withAccelerate())
-  
     const body = await c.req.json();
-  
+    const {success} = signupInput.safeParse(body)
+    if(!success) {
+      c.status(411)
+      return c.json({
+        message: "Inputs are wrong"
+      })
+    }
+    
     try {
       const user = await prisma.user.create({
         data: {
