@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useBlog } from "../hooks"
+import { FullBlog } from "./FullBlog";
 
 export default function Blog() {
   const { id } = useParams();
@@ -15,7 +16,7 @@ export default function Blog() {
 
   return (
     <div>
-      blog details
+      <FullBlog blog={blog} />
     </div>
   )
 }
