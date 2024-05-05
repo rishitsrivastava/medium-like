@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 
 interface BlogCardProps {
+    id: number,
     authorName: string;
     title: string;
     content: string;
@@ -7,6 +9,7 @@ interface BlogCardProps {
 }
 
 export const BlogCard = ({
+    id,
     authorName,
     title,
     content,
@@ -14,31 +17,33 @@ export const BlogCard = ({
 }: BlogCardProps) => {
     
     
-    return <div className="border-b border-slate-200 p-4">
-        <div className="flex">
-            <Avatar name={authorName} />
-            <div className="flex justify-center items-center">
-                <div className="font-medium pl-2 text-sm">
-                    {authorName}
-                </div>
-                <div className="flex justify-center flex-col pl-2">
-                    <Circle />
-                </div>
-                <div className=" pl-2 font-thin text-slate-500 text-sm">
-                    {publishedDate}
-                </div>
-            </div>    
+    return <Link to={`/blog/${id}`}>
+        <div className="border-b border-slate-200 p-4 min-w-min cursor-pointer">
+            <div className="flex">
+                <Avatar name={authorName} />
+                <div className="flex justify-center items-center">
+                    <div className="font-medium pl-2 text-sm">
+                        {authorName}
+                    </div>
+                    <div className="flex justify-center flex-col pl-2">
+                        <Circle />
+                    </div>
+                    <div className=" pl-2 font-thin text-slate-500 text-sm">
+                        {publishedDate}
+                    </div>
+                </div>    
+            </div>
+            <div className="font-bold text-xl pt-1">
+                {title}
+            </div>
+            <div className="text-slate-500 font-thin">
+                {content.slice(0,100) + "..."}
+            </div>
+            <div className="text-xs text-slate-400 pt-4">
+                {`${Math.ceil(content.length / 100)} minute(s) read`}
+            </div>
         </div>
-        <div className="font-bold text-xl pt-1">
-            {title}
-        </div>
-        <div className="text-slate-500 font-thin">
-            {content.slice(0,100) + "..."}
-        </div>
-        <div className="text-xs text-slate-400 pt-4">
-            {`${Math.ceil(content.length / 100)} minute(s) read`}
-        </div>
-    </div>
+    </Link>    
 }
 
 export function Avatar({name, size = 6} : {name: string, size?: number}) {
