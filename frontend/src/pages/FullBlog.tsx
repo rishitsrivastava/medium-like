@@ -1,4 +1,5 @@
 import { Appbar } from "../components/Appbar"
+import { Avatar } from "../components/BlogCard"
 import { Blog } from "../hooks"
 
 export const FullBlog = ({blog}: {blog : Blog}) => {
@@ -18,8 +19,23 @@ export const FullBlog = ({blog}: {blog : Blog}) => {
                         {blog.content}
                     </div>
                 </div>
-                <div className="col-span-4 bg-green-200">
-                    Hi
+                <div className="col-span-4">
+                    <div className="text-slate-600 text-lg">
+                        Author
+                    </div>
+                    <div className="flex">
+                        <div className="flex flex-col justify-center">
+                            <Avatar name={blog.author.name || "Anonymous"} size="big" />
+                        </div>
+                        <div className="pl-2">
+                            <div className="text-xl font-bold">
+                                {blog.author.name || "Anonymous"}
+                            </div>
+                            <div className="pt-2 text-slate-500">
+                                random catch phrase about the authors ability to grab users attention.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
