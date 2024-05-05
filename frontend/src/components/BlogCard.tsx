@@ -18,7 +18,7 @@ export const BlogCard = ({
         <div className="flex">
             <Avatar name={authorName} />
             <div className="flex justify-center items-center">
-                <div className="font-normal pl-2 text-sm">
+                <div className="font-medium pl-2 text-sm">
                     {authorName}
                 </div>
                 <div className="flex justify-center flex-col pl-2">

@@ -4,7 +4,13 @@ import { useBlogs } from "../hooks"
 
 export const Blogs = () => {
 
-    // const [loading, Blogs] = useBlogs();
+    const {loading, blogs} = useBlogs();
+
+    if(loading) {
+        return <div className="flex justify-center align-middle items-center text-slate-400">
+            Loading...
+        </div>
+    }
 
     return <div> 
         <div>
@@ -13,24 +19,12 @@ export const Blogs = () => {
 
         <div className="flex justify-center">
             <div className="max-w-xl">
-                <BlogCard
-                    authorName={"Peter V."}
-                    title={"How an Ugly Single-PageWebsite Makes $5,000 a Month with Affiliate Marketing"}
-                    content={"No need to create a fancy and modern website with hundreds of pages to make money online, - Making money online is the dream for man"}
-                    publishedDate={"Dec 3,2023"}
-                />
-                <BlogCard
-                    authorName={"Peter V."}
-                    title={"How an Ugly Single-PageWebsite Makes $5,000 a Month with Affiliate Marketing"}
-                    content={"No need to create a fancy and modern website with hundreds of pages to make money online, - Making money online is the dream for man"}
-                    publishedDate={"Dec 3,2023"}
-                />
-                <BlogCard
-                    authorName={"Peter V."}
-                    title={"How an Ugly Single-PageWebsite Makes $5,000 a Month with Affiliate Marketing"}
-                    content={"No need to create a fancy and modern website with hundreds of pages to make money online, - Making money online is the dream for man"}
-                    publishedDate={"Dec 3,2023"}
-                />
+                {blogs.map(blog => <BlogCard
+                    authorName={blog.author.name || "Anonymous"}
+                    title={blog.title}
+                    content={blog.content}
+                    publishedDate={"May 4, 2024"}
+                />)}
             </div>
         </div>
     </div>
