@@ -8,6 +8,7 @@ export const Publish = () => {
         <Appbar />
         <div>
             <MyEditor />
+            
         </div>
     </div>
 }
@@ -18,16 +19,18 @@ export const MyEditor = () => {
     const editor = useRef(null);
     const [content, setContent] = useState('')
 
-    return <div>
-        <Appbar />
+    return
         <div>
-            <div>
-                <JoditEditor                     
-                    ref={editor}
-                    value={content}
-                    onChange={newContent => setContent(newContent)}    
-                />
+            <div className="p-8">
+                <form action="">
+                    <JoditEditor                     
+                        ref={editor}
+                        value={content}
+                        onChange={newContent => setContent(newContent)} 
+                        className="max-h-screen"   
+                    />
+                </form>
             </div>
         </div>
-    </div>
+
 }    
