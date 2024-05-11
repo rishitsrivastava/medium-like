@@ -8,7 +8,7 @@ export default function Blog() {
     id: id || ""
   });
 
-  if(loading) {
+  if(loading || !blog) {
     return <div className="flex justify-center align-middle items-center text-slate-400">
         Loading...
     </div>

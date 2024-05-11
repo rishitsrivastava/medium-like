@@ -15,9 +15,10 @@ export const FullBlog = ({blog}: {blog : Blog}) => {
                     <div className="text-slate-500 pt-4">
                         Posted on 2nd December 2023
                     </div>
-                    <div className="pt-4">
-                        {blog.content}
-                    </div>
+                    <div className="pt-4" 
+                        dangerouslySetInnerHTML={{ __html: blog.content}} 
+                    />
+                    
                 </div>
                 <div className="col-span-4">
                     <div className="text-slate-600 text-lg">
