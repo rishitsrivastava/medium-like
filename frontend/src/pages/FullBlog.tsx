@@ -1,6 +1,7 @@
 import { Appbar } from "../components/Appbar"
 import { Avatar } from "../components/BlogCard"
 import { Blog } from "../hooks"
+import parse from "html-react-parser"
 
 export const FullBlog = ({blog}: {blog : Blog}) => {
 
@@ -15,9 +16,9 @@ export const FullBlog = ({blog}: {blog : Blog}) => {
                     <div className="text-slate-500 pt-4">
                         Posted on 2nd December 2023
                     </div>
-                    <div className="pt-4" 
-                        dangerouslySetInnerHTML={{ __html: blog.content}} 
-                    />
+                    <div className="pt-4">
+                        {parse(blog.content)}
+                    </div>
                     
                 </div>
                 <div className="col-span-4">
