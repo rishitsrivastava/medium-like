@@ -21,8 +21,8 @@ export const FullBlog = ({blog}: {blog : Blog}) => {
                     
                 </div>
                 <div className="col-span-4">
-                    <div className="text-slate-600 text-lg">
-                        Author
+                    <div className="text-slate-600 font-medium text-lg">
+                        Author:
                     </div>
                     <div className="flex">
                         <div className="flex flex-col justify-center">

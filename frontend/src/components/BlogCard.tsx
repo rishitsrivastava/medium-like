@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import parse from 'html-react-parser';
 
 interface BlogCardProps {
     id: number,
@@ -37,7 +38,9 @@ export const BlogCard = ({
                 {title}
             </div>
             <div className="text-slate-500 font-thin">
-                {content.slice(0,100) + "..."}
+                <div className="">
+                    {parse(content.slice(0,100) + '...')}
+                </div>
             </div>
             <div className="text-xs text-slate-400 pt-4">
                 {`${Math.ceil(content.length / 100)} minute(s) read`}
